@@ -1,66 +1,128 @@
 # Nextcloud Installation Script
 
-This bash script automates the installation of Nextcloud on Ubuntu-based systems. It simplifies the process by handling essential tasks such as installing dependencies, configuring the database, downloading and setting up Nextcloud, and configuring the Apache web server.
+A Bash script for automated installation and configuration of Nextcloud on Debian/Ubuntu and AlmaLinux/Rocky Linux systems.
 
 ## Features
 
-- **Operating System Detection**: Automatically detects and adjusts to the system's OS (Ubuntu/Debian).
-- **Dependency Installation**: Installs required packages (Apache, MariaDB, PHP, and others) for running Nextcloud.
-- **Database Configuration**: Sets up a MariaDB database for Nextcloud with automatically generated credentials.
-- **Nextcloud Installation**: Downloads, extracts, and sets up the latest Nextcloud version.
-- **Web Server Configuration**: Configures Apache web server with Nextcloud settings.
-- **Progress Bar**: Provides a real-time progress bar with color feedback during installation.
-- **Installation Summary**: Generates a summary file containing important details such as admin credentials and database information.
+- Interactive menu-driven interface
+- Automatic system detection and configuration
+- Progress visualization for installation steps
+- Support for multiple Linux distributions:
+  - Ubuntu
+  - Debian
+  - AlmaLinux
+  - Rocky Linux
+- Automated configuration of:
+  - Web server (Apache)
+  - Database (MariaDB)
+  - PHP and required extensions
+- Secure password generation
+- Detailed installation report
 
-## Requirements
+## Prerequisites
 
-- A system running **Ubuntu** or **Debian**.
-- A user with **root** privileges to execute the script.
-- Active internet connection to download Nextcloud and dependencies.
+- Root access to your system
+- One of the supported Linux distributions
+- Basic system requirements:
+  - Minimum 512MB RAM
+  - Minimum 10GB storage space
+  - Internet connection
 
-## Installation Instructions
+## Installation
 
-1. **Clone the repository**:
-   git clone https://github.com/yourusername/nextcloud-installation-script.git
-   cd nextcloud-installation-script
+1. Download the script:
+```bash
+wget https://raw.githubusercontent.com/sysnestor/Nextcloud-AutoInstaller/main/Nextcloud-AutoInstaller.sh
+```
 
-Make the script executable:
+2. Make it executable:
+```bash
+chmod +x Nextcloud-AutoInstaller.sh
+```
 
+3. Run the script:
+```bash
+sudo ./Nextcloud-AutoInstaller.sh
+```
 
-chmod +x nextcloud-install.sh
-Run the script:
+## Usage
 
+The script provides an interactive menu with the following options:
 
-sudo ./nextcloud-install.sh
-Follow the on-screen instructions: The script will guide you through the installation process, including system updates, dependency installation, database configuration, and Nextcloud setup.
+1. **Update and Upgrade System**
+   - Updates package lists
+   - Performs system upgrade
 
-Script Menu Options
-Once the script starts, you'll be presented with a menu:
+2. **Install Nextcloud**
+   - Installs all required dependencies
+   - Configures database
+   - Downloads and extracts Nextcloud
+   - Configures web server
+   - Sets appropriate permissions
+   - Generates secure passwords
+   - Creates installation report
 
-1. Update and Upgrade System: Updates the system and upgrades installed packages.
-2. Install Nextcloud: Installs Nextcloud by setting up dependencies, the database, and the web server.
-3. View Installation Details: Displays important installation information, including the Nextcloud URL, admin login credentials, and database details.
-4. Exit: Exits the script.
-Generated Installation Details
-After the script completes the installation, a file named nextcloud_details.txt will be created in the root directory (/root/nextcloud_details.txt). This file contains the following details:
+3. **View Installation Details**
+   - Displays installation information including:
+     - Nextcloud URL
+     - Admin credentials
+     - Database details
 
-Nextcloud URL: The address to access Nextcloud
-Admin Username: The default admin username
-Admin Password: A randomly generated admin password
-Database Credentials: Database name, user, and password for Nextcloud
-License
-This project is licensed under the MIT License - see the LICENSE file for details.
+4. **Exit**
+   - Exits the script
 
-Support
-If you encounter any issues or have questions, please feel free to open an issue on the GitHub repository.
+## Security Features
 
-Disclaimer: This script is intended for use on Ubuntu and Debian-based systems. Ensure you have backups of your data before running the script on any production systems.
+- Random password generation for:
+  - Database root password
+  - Database user password
+  - Nextcloud admin password
+- Proper file permissions
+- SELinux configuration (for AlmaLinux/Rocky Linux)
+- Firewall configuration (for AlmaLinux/Rocky Linux)
 
+## Installation Report
 
-### Key points to note:
-- Code snippets are wrapped with triple backticks (```) for proper formatting.
-- Lists are formatted with hyphens for bullets (`-`).
-- Sections like `Installation Instructions` are clearly separated with headings (`##`).
+After successful installation, a detailed report is generated at `/root/nextcloud_details.txt` containing:
+- Nextcloud access URL
+- Admin credentials
+- Database connection details
+- System information
+
+## Error Handling
+
+The script includes comprehensive error handling:
+- Checks for root privileges
+- Validates operating system compatibility
+- Monitors installation processes
+- Provides detailed error messages
+
+## Operating System Support
+
+### Debian/Ubuntu
+- Configures Apache with required modules
+- Sets up MariaDB database
+- Installs necessary PHP extensions
+
+### AlmaLinux/Rocky Linux
+- Configures Apache (httpd) with required settings
+- Sets up MariaDB database
+- Installs necessary PHP extensions
+- Configures SELinux and firewall
+
+## Contributing
+
+Feel free to submit issues and pull requests for:
+- Bug fixes
+- New features
+- Documentation improvements
+- Support for additional distributions
+
+## License
+
+This script is provided as-is. Use it at your own risk. 
+
+Feel free to contribute or make improvements. For issues or enhancements, please open an issue on the GitHub repository.
 
 ## Contact
 

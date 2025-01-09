@@ -100,12 +100,6 @@ The script includes comprehensive error handling:
 - Sets up MariaDB database
 - Installs necessary PHP extensions
 
-### AlmaLinux/Rocky Linux
-- Configures Apache (httpd) with required settings
-- Sets up MariaDB database
-- Installs necessary PHP extensions
-- Configures SELinux and firewall
-
 ## Contributing
 
 Feel free to submit issues and pull requests for:

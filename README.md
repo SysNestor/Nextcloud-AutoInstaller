@@ -10,8 +10,6 @@ A Bash script for automated installation and configuration of Nextcloud on Debia
 - Support for multiple Linux distributions:
   - Ubuntu
   - Debian
-  - AlmaLinux
-  - Rocky Linux
 - Automated configuration of:
   - Web server (Apache)
   - Database (MariaDB)
@@ -78,9 +76,7 @@ The script provides an interactive menu with the following options:
   - Database user password
   - Nextcloud admin password
 - Proper file permissions
-- SELinux configuration (for AlmaLinux/Rocky Linux)
-- Firewall configuration (for AlmaLinux/Rocky Linux)
-
+  
 ## Installation Report
 
 After successful installation, a detailed report is generated at `/root/nextcloud_details.txt` containing:

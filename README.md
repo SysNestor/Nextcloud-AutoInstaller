@@ -1,6 +1,6 @@
 # Nextcloud Installation Script
 
-A Bash script for automated installation and configuration of Nextcloud on Debian/Ubuntu and AlmaLinux/Rocky Linux systems.
+A Bash script for automated installation and configuration of Nextcloud on Debian/Ubuntu  Linux systems.
 
 ## Features
 

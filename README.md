@@ -2,7 +2,7 @@
 
 This repository provides a Bash script that automates Nextcloud installation and configuration on Ubuntu/Debian systems. It covers system updates, dependency installation, database setup, web server configuration, and initial deployment—all with robust error handling, headless logging, and visual progress indicators.
 
-> **Suggestion:** Consider adding support matrix for tested OS versions (e.g., Ubuntu 18.04/20.04/22.04, Debian 10/11).
+> **Suggestion:** Consider adding support matrix for tested OS versions (e.g., Ubuntu 18.04/20.04/22.04,24.04, Debian 10/11/12).
 
 ## Table of Contents
 
@@ -32,7 +32,7 @@ This repository provides a Bash script that automates Nextcloud installation and
 
 ## Prerequisites
 
-* **OS**: Ubuntu 18.04/20.04/22.04 or Debian 10/11.
+* **OS**: Ubuntu 18.04/20.04/22.04/24.04 or Debian 10/11/12.
 * **Privileges**: Run as `root` or via `sudo`.
 * **Network**: Active internet connection for package and archive retrieval.
 * **Tools**: Bash, `wget`, `openssl`, `tar`, `ip`, and `ping` (commonly preinstalled).
@@ -80,7 +80,7 @@ All output (stdout & stderr) is redirected to `/var/log/nextcloud_install.log`. 
 ## Configuration
 
 * **Virtual Host**: Edit `/etc/apache2/sites-available/nextcloud.conf` to customize domains or enable SSL.
-* **PHP**: Adjust `/etc/php/7.x/apache2/php.ini` for memory limits, upload size, and execution time.
+* **PHP**: Adjust `/etc/php/8.x/apache2/php.ini` for memory limits, upload size, and execution time.
 * **HTTPS**: This script sets up HTTP only. Use Certbot or your preferred ACME client for TLS.
 
 > **Suggestion:** Provide a link or minimal instructions for obtaining a Let's Encrypt certificate.
